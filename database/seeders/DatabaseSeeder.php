@@ -9,6 +9,7 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
+        $this->call(UserSeeder::class);
         $this->call(bigtaskSeeder::class);
         $this->call(medtaskSeeder::class);
         $this->call(smalltaskSeeder::class);

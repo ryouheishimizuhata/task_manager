@@ -10,7 +10,7 @@ class BigtaskController extends Controller
 {
     public function index()
     {
-        $bigtasks = Bigtask::all();
-        return view('posts.index')->with(['folders' => $bigtasks]);
+        $bigtask = Bigtask::all();
+        return view('posts.bigtask')->with(['bigtask' => $bigtask]);
     }
 }

@@ -22,8 +22,9 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/tasks/{post}', [BigtaskController::class ,'show']);
-
 //タスク index一覧表示
+Route::get('/tasks',[App\Http\Controllers\BigtaskController::class,'index'])->name('index');
 
-Route::get('/tasks',[App\Http\Controllers\BigtaskController::class, 'index'])->name('index');
+Route::get('/tasks/{bigtask_id}',[App\Http\Controllers\MedtaskController::class ,'index']) ->name('detail');
+
+Route::get('/tasks/{bigtask_id}/{medtask_id}', [App\Http\Controllers\SmalltaskController::class ,'index'])->name('detail2');

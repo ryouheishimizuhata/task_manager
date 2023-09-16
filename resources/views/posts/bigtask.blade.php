@@ -19,24 +19,26 @@
             <th>updated_at</th>
             <th>deleted_at</th>
         </tr> <!– テーブル終了タグ（列名） –>
-      @foreach($folders as $folder)
+      @foreach($bigtask as $bigtask)
         <tr>　<!– テーブル開始タグ（要素を追加） –>
             <td>
-                <a href="/tasks/{{ $folder->id }}">{{$folder->id }}</a>
+                <a href="/tasks/{{ $bigtask->id }}">{{$bigtask->id }}</a>
             </td>  
-            <td>{{$folder->user_id}}</td>
-            <td>{{$folder->task_name}}</td>
-            <td>{{$folder->task_progress}}</td>
-            <td>{{$folder->task_state}}</td>
-            <td>{{$folder->memo}}</td>
-            <td>{{$folder->task_eval}}</td>
-            <td>{{$folder->start_at}}</td>
-            <td>{{$folder->end_at}}</td>
-            <td>{{$folder->created_at}}</td>
-            <td>{{$folder->updated_at}}</td>
-            <td>{{$folder->deleted_at}}</td> 
+            <td>{{$bigtask->user_id}}</td>
+            <td>{{$bigtask->task_name}}</td>
+            <td>{{$bigtask->task_progress}}</td>
+            <td>{{$bigtask->task_state}}</td>
+            <td>{{$bigtask->memo}}</td>
+            <td>{{$bigtask->task_eval}}</td>
+            <td>{{$bigtask->start_at}}</td>
+            <td>{{$bigtask->end_at}}</td>
+            <td>{{$bigtask->created_at}}</td>
+            <td>{{$bigtask->updated_at}}</td>
+            <td>{{$bigtask->deleted_at}}</td> 
         </tr>　<!– テーブル終了タグ（要素を追加） –>
       @endforeach
     </table> <!- テーブル終了タグ ->
+    
+     <a href="/dashboard">マイページに戻る</a>
 
     </html>
