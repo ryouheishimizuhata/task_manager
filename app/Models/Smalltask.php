@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Smalltask extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+    'medtask_id',
+    'task_name',
+    'start_at',
+    'end_at',
+    ];
 }

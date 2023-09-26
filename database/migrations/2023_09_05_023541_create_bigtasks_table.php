@@ -12,13 +12,13 @@ return new class extends Migration
             $table->id('id');
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('task_name', 20);
-            $table->string('task_progress', 50);
-            $table->boolean('task_state');   
-            $table->string('memo', 200);
-            $table->string('task_eval', 20);
+            $table->string('task_progress', 50)->nullable();
+            $table->boolean('task_state')->nullable();   
+            $table->string('memo', 200)->nullable();
+            $table->string('task_eval', 20)->nullable();
             $table->date('start_at');
             $table->date('end_at');
-            $table->boolean('public');
+            $table->boolean('public')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

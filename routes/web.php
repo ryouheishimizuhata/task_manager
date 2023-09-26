@@ -1,10 +1,8 @@
 <?php
 
-
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskPostController;
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,7 +22,14 @@ require __DIR__.'/auth.php';
 
 //タスク index一覧表示
 Route::get('/tasks',[App\Http\Controllers\BigtaskController::class,'index'])->name('index');
+Route::get('/tasks/create', [App\Http\Controllers\BigtaskController::class, 'create'])->name('create');
+Route::get('/tasks/edit', [App\Http\Controllers\BigtaskController::class, 'create'])->name('edit');
+Route::post('/tasks', [App\Http\Controllers\BigtaskController::class, 'store']);
 
-Route::get('/tasks/{bigtask_id}',[App\Http\Controllers\MedtaskController::class ,'index']) ->name('detail');
+Route::get('/tasks/{bigtask}',[App\Http\Controllers\MedtaskController::class ,'index']) ->name('index_2');
+Route::get('/tasks/{bigtask}/create', [App\Http\Controllers\MedtaskController::class, 'create'])->name('create_2');
+Route::post('/tasks/{bigtask}', [App\Http\Controllers\MedtaskController::class, 'store']);
 
-Route::get('/tasks/{bigtask_id}/{medtask_id}', [App\Http\Controllers\SmalltaskController::class ,'index'])->name('detail2');
+Route::get('/tasks/{bigtask}/{medtask}', [App\Http\Controllers\SmalltaskController::class ,'index'])->name('index_3');
+Route::get('/tasks/{bigtask}/{medtask}/create', [App\Http\Controllers\SmalltaskController::class, 'create'])->name('create_3');
+Route::post('/tasks/{bigtask}/{medtask}', [App\Http\Controllers\SmalltaskController::class, 'store']);
