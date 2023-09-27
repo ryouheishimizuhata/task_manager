@@ -43,7 +43,7 @@
               @endforeach
             </table> <!- テーブル終了タグ ->
         </body>
-    <div class="create"><a href="/tasks/{{$medtask->bigtask_id}}/create">新しい中タスクを追加</a></div>
+    <div class="create"><a href="/tasks/{{$bigtask->id}}/create">新しい中タスクを追加</a></div>
     <a href="/tasks">大タスク一覧に戻る</a>
 
     </html>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Bigtask;
 use App\Models\Medtask;
 use App\Models\Smalltask;
 use Auth;
@@ -15,9 +16,10 @@ class SmalltaskController extends Controller
         return view('posts.smalltask')->with(['medtask' => $medtask]);
     }
 
-    public function create(Medtask $medtask)
+    public function create(Bigtask $bigtask, Medtask $medtask)
     {
-        return view('posts.create_smalltask')->with(['medtask' => $medtask]);
+    // $bigtask と $medtask を使用したコード
+    return view('posts.create_smalltask')->with(['medtask' => $medtask]);
     }
     
     public function store(Request $request, Medtask $medtask, Smalltask $smalltask)

@@ -5,7 +5,7 @@
             <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head> <!– head終了タグ –>
     <body>
-        <h1>小タスク一覧</h1>
+        <h1>{{$medtask->task_name}}を表示中</h1>
         <table border = "1"> <!- テーブル開始タグ：表の枠や罫線をつけるための処理 ->
             <tr> <!– テーブル開始タグ（列名） –>
                 <th>id</th> 
