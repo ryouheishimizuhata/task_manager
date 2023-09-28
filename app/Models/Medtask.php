@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bigtask extends Model
+class Medtask extends Model
 {
     use HasFactory;
-    
-    public function medtasks()
+
+    public function smalltasks()   
     {
-        return $this->hasMany(Medtask::class);  
+        return $this->hasMany(Smalltask::class);  
     }
     
     protected $fillable = [
-    'user_id',
+    'bigtask_id',
     'task_name',
     'start_at',
     'end_at',
