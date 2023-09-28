@@ -21,7 +21,9 @@
         </tr> <!– テーブル終了タグ（列名） –>
       @foreach($folders as $folder)
         <tr>　<!– テーブル開始タグ（要素を追加） –>
-            <td>{{$folder->id }}</td>  
+            <td>
+                <a href="/tasks/{{ $folder->id }}">{{$folder->id }}</a>
+            </td>  
             <td>{{$folder->user_id}}</td>
             <td>{{$folder->task_name}}</td>
             <td>{{$folder->task_progress}}</td>

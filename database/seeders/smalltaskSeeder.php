@@ -12,8 +12,10 @@ class smalltaskSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('smalltasks')->insert([
-                'medtask_id' => 1,
+        DB::table('smalltasks')->delete();
+        
+        DB::table('smalltasks')->
+        insert(['medtask_id' => 1,
                 'task_name' => 'C',
                 'task_progress' => '2回目の会議が終了',
                 'task_state' => true,
